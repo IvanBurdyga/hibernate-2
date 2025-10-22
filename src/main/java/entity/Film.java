@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -30,7 +29,7 @@ public class Film {
     private String description;
 
     @Column(name = "release_year")
-    private LocalDate releaseYear;
+    private Integer releaseYear;
 
     @ManyToOne
     @JoinColumn(name = "language_id")

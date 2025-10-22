@@ -19,7 +19,7 @@ public class Staff {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "staff_id")
+    @Column(name = "staff_id", insertable=false, updatable=false)
     private Long staffId;
 
     @Column(name = "first_name", nullable = false,length = 45)
@@ -41,7 +41,7 @@ public class Staff {
 
     @ManyToOne
     @JoinColumn(name = "store_id", nullable = false)
-    private Store storeId;
+    private Store store;
 
     @Column(name = "active", nullable = false, length = 1)
     private Byte active;

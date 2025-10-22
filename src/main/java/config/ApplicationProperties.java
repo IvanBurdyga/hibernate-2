@@ -3,7 +3,7 @@ package config;
 import java.io.IOException;
 import java.util.Properties;
 
-public class Config {
+public class ApplicationProperties extends Properties {
 
     public static final String DB_DRIVER = "db.driver";
     public static final String DB_URL = "db.uri";
@@ -15,13 +15,13 @@ public class Config {
 
     static {
         try {
-            properties.load(Config.class.getResourceAsStream("/application.properties"));
+            properties.load(ApplicationProperties.class.getResourceAsStream("/application.properties"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static String getProperties(String key) {
+    public static String getApplicationProperty(String key) {
         return properties.getProperty(key);
     }
 }

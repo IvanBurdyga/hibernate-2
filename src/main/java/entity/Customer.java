@@ -2,10 +2,10 @@ package entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @Setter
@@ -43,6 +43,7 @@ public class Customer {
     @Column(name = "active", nullable = false, length = 1)
     private Byte active;
 
+    @CreationTimestamp
     @Column(name = "create_date", nullable = false)
     private LocalDateTime createDate;
 
